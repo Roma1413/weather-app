@@ -8,7 +8,6 @@
 </head>
 <body>
     <div class="main-content">
-        {{> header }}
         <h1>Weather App</h1>
         <article class="widget">
             <form class="weatherLocation">
@@ -17,7 +16,6 @@
                 <button class="search-button">Search</button>
             </form>
 
-
             <div class="icon-and-weatherInfo">
                 <div class="weatherIcon">
                     <i></i>
@@ -25,17 +23,21 @@
                 <div class="weatherInfo">
                     <div class="temperature"><span></span></div>
                     <div class="weatherCondition"></div>
-            </div>
+                </div> <!-- closes weatherInfo -->
+            </div> <!-- closes icon-and-weatherInfo -->
 
-
-           
             <div class="place"></div>
             <div class="date"></div>
-
         </article>
-
     </div>
-    <script src="/js/app.js"></script>
 
+    <div class="news-section">
+        <h2 class="news-title">Latest News</h2>
+        <div class="news-articles">
+            <!-- News articles will be dynamically injected here -->
+        </div>
+    </div>
+
+    <script src="/js/app.js"></script>
 </body>
 </html>

@@ -6,7 +6,7 @@ const app = express();
 
 
 const weatherData = require("../utils/weatherData")
-
+const newsData = require("../utils/news")
 
 const publicPath = path.join(__dirname, "../public");
 const viewsPath = path.join(__dirname, "../templates/views");
@@ -22,23 +22,37 @@ app.get('/', (req, res) => {
     res.render("index", {title: 'Weather app'});
 });
 
-app.get('/weather', (req, res) => {
-    if (!req.query.address) {
-        return res.send("You must provide an address");
+
+app.get('/search', (req, res) => {
+    const city = req.query.address;
+    if (!city) {
+        return res.send({ error: "You must provide a city" });
     }
-    weatherData(req.query.address, (error, result) =>{
-    if(error){
-        return res.send(error)
-    }
-    res.send(result);
-})
+
+    
+    weatherData(city, (weatherError, weatherResult) => {
+        if (weatherError) {
+            return res.send({ error: weatherResult });
+        }
+
+        
+        newsData(city, (newsError, newsResult) => {
+            if (newsError) {
+                return res.send({ 
+                    weather: weatherResult,
+                    newsError: newsResult
+                });
+            }
+
+            
+            res.send({
+                weather: weatherResult,
+                news: newsResult.articles
+            });
+        });
+    });
 });
-
-
-
-
-
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
-});
+    });

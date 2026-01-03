@@ -14,7 +14,7 @@ const weatherData = (address, callback) => {
 
     request({url, json: true}, (error, data) => {
         if(error) {
-            callback(true, "Unable to fetch data. Please try again later" + error);
+            callback(true, "Unable to fetch data. Please try again later");
             return;
         }
     callback(false, data?.body)
