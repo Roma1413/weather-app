@@ -39,7 +39,8 @@ The server will automatically restart when you make changes to the code (thanks 
 3. View the weather information and related news articles below
 
 ## Project Structure
-weather api/
+weather api
+```
 ├── src/
 │   └── app.js          # Main server file
 ├── public/
@@ -54,7 +55,7 @@ weather api/
     ├── weatherData.js  # Weather API integration
     └── news.js         # News API integration
 
-
+```
 ## Technologies Used
 
 Node.js - Backend runtime
