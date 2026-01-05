@@ -1,4 +1,4 @@
-# Weather App 🌤️
+# Weather App 
 
 A simple and beautiful weather application that shows you the current weather and related news for any city around the world.
 
@@ -9,8 +9,6 @@ A simple and beautiful weather application that shows you the current weather an
 - Get the latest news articles related to that city
 - Beautiful, modern interface with smooth animations
 
-## Getting Started
-
 ### Prerequisites
 
 Make sure you have [Node.js](https://nodejs.org/) installed on your computer.
@@ -20,33 +18,27 @@ Make sure you have [Node.js](https://nodejs.org/) installed on your computer.
 1. Clone or download this project
 2. Open a terminal in the project folder
 3. Install the dependencies:
-   ```bash
    npm install
-   ```
+   
 
 ### Running the App
 
 Start the server:
-```bash
 npm start
-```
+
 
 Then open your browser and visit:
-```
 http://localhost:3000
-```
 
 The server will automatically restart when you make changes to the code (thanks to nodemon).
 
 ## How to Use
 
-1. Type a city name in the search box (e.g., "London", "New York", "Tokyo")
+1. Type a city name in the search box ("London", "New York", "Tokyo")
 2. Click the "Search" button
 3. View the weather information and related news articles below
 
 ## Project Structure
-
-```
 weather api/
 ├── src/
 │   └── app.js          # Main server file
@@ -61,26 +53,17 @@ weather api/
 └── utils/
     ├── weatherData.js  # Weather API integration
     └── news.js         # News API integration
-```
+
 
 ## Technologies Used
 
-- **Node.js** - Backend runtime
-- **Express** - Web framework
-- **Handlebars (hbs)** - Template engine
-- **OpenWeatherMap API** - Weather data
-- **NewsAPI** - News articles
+Node.js - Backend runtime
+Express - Web framework
+Handlebars (hbs) - Template engine
+OpenWeatherMap API - Weather data
+NewsAPI - News articles
 
-## Notes
 
-- You'll need API keys for OpenWeatherMap and NewsAPI to use this app
-- The API keys are currently hardcoded in the utility files (consider using environment variables for production)
 
-## License
 
-ISC
-
----
-
-Made with ❤️ for weather enthusiasts
 
